@@ -8,15 +8,13 @@ internal class KronerTest {
     @Test
     fun multiplyAmount() {
         val five = Kroner(5)
-        var product: Kroner = five.times(2)
-        assertEquals(10, product.amount)
-
-        product = five.times(3)
-        assertEquals(15, product.amount)
+        assertEquals(Kroner(10), five.times(2))
+        assertEquals(Kroner(15), five.times(3))
     }
 
     @Test
     fun equalityCheck() {
         assertTrue(Kroner(5) == Kroner(5))
+        assertFalse(Kroner(5) == Kroner(6))
     }
 }
