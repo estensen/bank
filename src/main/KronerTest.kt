@@ -8,7 +8,10 @@ internal class KronerTest {
     @Test
     fun testMultiplication() {
         val five = Kroner(5)
-        val ten = five.times(2)
-        assertEquals(10, five.amount)
+        var product: Kroner = five.times(2)
+        assertEquals(10, product.amount)
+
+        product = five.times(3)
+        assertEquals(15, product.amount)
     }
 }
