@@ -1,7 +1,8 @@
-package main
+package test
 
-import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
+import junit.framework.TestCase.*
+import main.Money
+import org.junit.Test
 
 internal class MoneyTest {
 
@@ -23,5 +24,7 @@ internal class MoneyTest {
 
         assertTrue(Money("USD", 5) == Money("USD", 5))
         assertFalse(Money("USD", 5) == Money("USD", 6))
+
+        assertFalse(Money("NOK", 5) == Money("USD", 5))
     }
 }
