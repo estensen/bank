@@ -27,4 +27,10 @@ internal class MoneyTest {
 
         assertFalse(Money("NOK", 5) == Money("USD", 5))
     }
+
+    @Test
+    fun isCurrency() {
+        assertEquals("NOK", Money("NOK", 1).currency())
+        assertEquals("USD", Money("USD", 1).currency())
+    }
 }

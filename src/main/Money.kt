@@ -6,6 +6,10 @@ data class Money(private val currencyCode: String, private val amount: Int) {
         return Money(currencyCode, amount * multiplier)
     }
 
+    fun currency(): String {
+        return currencyCode
+    }
+
 }
 fun main(args : Array<String>) {
     println("Hello world!")
