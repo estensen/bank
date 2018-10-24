@@ -21,10 +21,6 @@ internal class MoneyTest {
     fun equalityCheck() {
         assertTrue(Money("NOK", 5) == Money("NOK", 5))
         assertFalse(Money("NOK", 5) == Money("NOK", 6))
-
-        assertTrue(Money("USD", 5) == Money("USD", 5))
-        assertFalse(Money("USD", 5) == Money("USD", 6))
-
         assertFalse(Money("NOK", 5) == Money("USD", 5))
     }
 
