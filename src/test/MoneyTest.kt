@@ -1,7 +1,10 @@
 package test
 
 import junit.framework.TestCase.*
+import main.Bank
+import main.Expression
 import main.Money
+import main.Sum
 import org.junit.Test
 
 internal class MoneyTest {
@@ -28,5 +31,20 @@ internal class MoneyTest {
     fun isCurrency() {
         assertEquals("NOK", Money("NOK", 1).currency())
         assertEquals("USD", Money("USD", 1).currency())
+    }
+
+    @Test
+    fun addition() {
+        val sum = Sum(Money("NOK", 5), Money("NOK", 10))
+        val bank = Bank()
+        val reduced = bank.reduce("NOK", sum)
+        assertEquals(Money("NOK", 15), reduced)
+    }
+
+    @Test
+    fun reduce() {
+        val bank = Bank()
+        val result = bank.reduce("NOK", Money("NOK", 1))
+        assertEquals(Money("NOK", 1), result)
     }
 }
